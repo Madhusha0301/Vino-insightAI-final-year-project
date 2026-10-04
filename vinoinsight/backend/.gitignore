@@ -1,0 +1,11 @@
+# Real secrets — never commit. NOTE: .gitignore protects git only; when
+# zipping this project for submission you must exclude .env explicitly
+# (see the packaging command in the root README).
+.env
+
+# Safe to commit — it is a placeholder template with no real key.
+!.env.example
+
+__pycache__/
+*.pyc
+.pytest_cache/

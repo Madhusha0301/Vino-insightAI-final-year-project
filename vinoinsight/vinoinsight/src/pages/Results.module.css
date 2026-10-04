@@ -1,0 +1,130 @@
+.page { display: flex; flex-direction: column; gap: 32px; }
+
+.header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+
+.backBtn {
+  display: flex; align-items: center; gap: 6px;
+  background: none; border: none; color: var(--text-muted);
+  font-size: 0.82rem; cursor: pointer; font-family: var(--font-body);
+  margin-bottom: 8px; padding: 0; transition: color 0.2s;
+}
+.backBtn:hover { color: var(--gold); }
+
+.title { font-family: var(--font-display); font-size: 1.8rem; color: var(--cream); margin-bottom: 6px; }
+.subtitle { font-size: 0.9rem; color: var(--text-muted); }
+
+.downloadBtn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 18px; background: none;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text-muted); font-family: var(--font-body);
+  font-size: 0.85rem; cursor: pointer; transition: all 0.2s;
+  white-space: nowrap; align-self: flex-start; margin-top: 28px;
+}
+.downloadBtn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Output cards */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.outputCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  transition: border-color 0.2s, transform 0.2s;
+  border-top: 3px solid var(--c, var(--gold));
+}
+
+.outputCard:hover { border-color: var(--c, var(--gold)); transform: translateY(-2px); }
+
+.cardIcon {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--c, var(--gold)) 15%, transparent);
+  color: var(--c, var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 4px;
+}
+
+.cardValue {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cream);
+}
+
+.cardLabel { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.cardSub   { font-size: 0.7rem; color: var(--text-dim); }
+
+/* Sections */
+.section { display: flex; flex-direction: column; gap: 14px; }
+
+.sectionHead { display: flex; flex-direction: column; gap: 4px; }
+
+.sectionTitle { font-family: var(--font-display); font-size: 1.15rem; color: var(--cream); }
+.sectionSub   { font-size: 0.83rem; color: var(--text-muted); }
+
+.chartCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 16px 16px;
+}
+
+.shapLegend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 12px;
+  font-size: 0.78rem;
+}
+
+.legendPos { color: #3ECF8E; }
+.legendNeg { color: #E05C6A; }
+
+/* Recommendations */
+.recoList { display: flex; flex-direction: column; gap: 10px; }
+
+.recoCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  transition: border-color 0.2s;
+}
+
+.recoCard:hover { border-color: rgba(201,168,76,0.3); }
+
+.recoIcon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: rgba(201,168,76,0.12);
+  color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.recoText { font-size: 0.88rem; color: var(--text); line-height: 1.55; }
+
+@media (max-width: 1000px) {
+  .cardsGrid { grid-template-columns: repeat(3,1fr); }
+}
+@media (max-width: 650px) {
+  .cardsGrid { grid-template-columns: repeat(2,1fr); }
+}
+
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
